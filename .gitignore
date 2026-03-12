@@ -1,0 +1,130 @@
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+.idea/modules.xml
+.idea/navEditor.xml
+
+# Gradle
+.gradle/
+build/
+**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# Local config (contains SDK path — never commit this)
+local.properties
+
+# Generated files
+gen/
+out/
+bin/
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ProGuard
+proguard/
+*.map
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python / Chaquopy
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.Python
+*.egg
+*.egg-info/
+dist/
+eggs/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Test results
+test-results/
+lint-results/
+
+# Captures (Android Studio profiler)
+captures/
+
+
+# CMake / NDK build cache
+app/.cxx/
+.cxx/
+
+# Compiled native objects
+*.o
+*.a
+*.so
+
+# Ninja build files
+build.ninja
+*.ninja
+
+# CMake generated
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+compile_commands.json.bin
+configure_fingerprint.bin
+android_gradle_build.json
+android_gradle_build_mini.json
+# Gradle build output
+
+/build/
+/app/build/
+
+# Native build folders (NDK / CMake)
+
+.cxx/
+
+# Local configuration (machine specific)
+
+local.properties
+
+# Gradle cache
+
+.gradle/
+
+# Android Studio files
+
+.idea/
+*.iml
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+
+note.txt

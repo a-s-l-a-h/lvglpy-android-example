@@ -1,0 +1,68 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.chaquo.python'
+}
+
+android {
+    namespace 'com.example.lvglpy_android_example'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.example.lvgl_py_android_template"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Only the ABIs you built wheels for.
+        // Add "armeabi-v7a" / "x86" if you build those wheels too.
+        ndk {
+            abiFilters "arm64-v8a", "x86_64"
+        }
+
+        // NO externalNativeBuild block — the .so comes from the .whl,
+        // not from an Android Studio CMake build.
+    }
+
+    // NO externalNativeBuild block here either.
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+chaquopy {
+    defaultConfig {
+        version = "3.12"
+        buildPython("/usr/bin/python3")
+
+        pip {
+            // Point pip at the local libs/ folder where your .whl files live.
+            // Drop mylibrary-1.0-cp312-cp312-android_*.whl files there.
+            options("--find-links", "${project.projectDir}/libs")
+
+            // Chaquopy + pip pick the correct ABI wheel automatically.
+            install("lvglpy==1.0")
+        }
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}
